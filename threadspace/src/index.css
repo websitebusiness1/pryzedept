@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-white font-sans text-black antialiased; }
+  :focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+}
+
+@layer components {
+  /* Sharp corners to match the angular Pryze.dept mark */
+  .btn { @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold transition-colors disabled:pointer-events-none disabled:opacity-50; }
+  .btn-primary { @apply btn bg-black text-white hover:bg-sand-700; }
+  .btn-outline { @apply btn border border-black text-black hover:bg-black hover:text-white; }
+  .btn-quiet { @apply btn text-sand-700 hover:bg-sand-100; }
+  .btn-danger { @apply btn border border-red-800 text-red-800 hover:bg-red-800 hover:text-white; }
+  .input { @apply w-full border border-sand-300 bg-white px-3 py-2.5 text-sm placeholder:text-sand-500 focus:border-black focus:outline-none disabled:bg-sand-50; }
+  .label { @apply mb-1.5 block text-sm font-semibold; }
+  .hint { @apply mt-1 text-xs text-sand-500; }
+  .card { @apply border border-sand-200 bg-white; }
+}
+
+/* Headings: heavy, uppercase, tight (matches the logo) */
+.font-display { font-weight: 800; letter-spacing: -0.01em; text-transform: uppercase; line-height: 1.05; }
